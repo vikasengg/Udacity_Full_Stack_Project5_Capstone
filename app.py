@@ -4,23 +4,14 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from database.models import setup_db,  Movie, Actor, setup_migrations
 from auth.auth import AuthError, requires_auth
-from settings import DB_NAME, DB_USER, DB_PASSWORD, DB_HOST
 
 from datetime import datetime
 
-def create_app(db_name="", test_config=None):
+def create_app():
 
     app = Flask(__name__)
-
-    db_path = 'postgresql://{}:{}@{}/{}'.format(DB_USER, DB_PASSWORD, DB_HOST, DB_NAME)
-
-    if db_path:
-        setup_db(app,db_path)
-    else: 
-        setup_db(app)
-    
+    setup_db(app)
     setup_migrations(app)
-
     CORS(app)
 
     # CORS Headers

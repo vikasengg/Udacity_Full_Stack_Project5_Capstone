@@ -1,7 +1,8 @@
 from dotenv import load_dotenv
 import os
 # Creating separate .env file test and main
-if os.environ.get("env") == "development":
+
+if os.environ.get("FLASK_ENV") == "test":
     load_dotenv(".env_test")
 else:
     load_dotenv(".env")

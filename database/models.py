@@ -17,15 +17,12 @@ print("From ENV Variable - Database URI =", DATABASE_URI)
 # Setting up Database URI in correct format
 if DATABASE_URI is None:
     DATABASE_URI = "postgresql://{}:{}@{}/{}".format(DB_USER, DB_PASSWORD, DB_HOST, DB_NAME)
-    print(" Database URI is ", DATABASE_URI)
+    print("Database URI is ", DATABASE_URI)
 else:
     DATABASE_URI = DATABASE_URI.replace("://", "ql://", 1)
     print("Database URI is ", DATABASE_URI)
 
-'''
-setup_db(app)
-    binds a flask application and a SQLAlchemy service
-'''
+# Setting up DB config using path
 def setup_db(app,database_path=DATABASE_URI):
     app.config["SQLALCHEMY_DATABASE_URI"] = database_path
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
@@ -33,7 +30,6 @@ def setup_db(app,database_path=DATABASE_URI):
     # Creating DB if it doesn't already exist
     if not database_exists(database_path):
         create_database(database_path)
-        print("Creating DB as it doesn't already exist")
     
     db.app = app
     db.init_app(app)

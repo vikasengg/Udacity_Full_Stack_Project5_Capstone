@@ -20,12 +20,12 @@ class ActorsTestCase(unittest.TestCase):
         self.assistant = CASTING_ASSISTANT_TOKEN
         self.director = CASTING_DIRECTOR_TOKEN
         self.producer = EXECUTIVE_PRODUCER_TOKEN
-        self.db_path = 'postgresql://{}:{}@{}/{}'.format(DB_USER, DB_PASSWORD, DB_HOST, DB_NAME)
 
-        self.app = create_app(self.db_path)
+        self.app = create_app()
         self.client = self.app.test_client()
-        # setup_db(self.app)
-        self.app.app_context().push()
+        setup_db(self.app)
+        with self.app.app_context():
+            create_tables_for_test()
 
     # Get all Actors Test Case 
     def test_get_all_actors_postitive(self):
