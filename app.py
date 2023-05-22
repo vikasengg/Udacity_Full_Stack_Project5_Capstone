@@ -19,7 +19,7 @@ def create_app():
         DATABASE_URI = "postgresql://{}:{}@{}/{}".format(DB_USER, DB_PASSWORD, DB_HOST, DB_NAME)
         print("Local configured Database URI is ", DATABASE_URI)
     else:
-        # DATABASE_URI = DATABASE_URI.replace("://", "ql://", 1)
+        DATABASE_URI = DATABASE_URI.replace("://", "ql://", 1)
         print("Prod configured Database URI is ", DATABASE_URI)
 
     setup_db(app, DATABASE_URI)
