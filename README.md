@@ -14,8 +14,6 @@ The project adheres to the PEP 8 style guide and follows common best practices, 
 * Variable and function names are clear.
 * Endpoints are logically named.
 * Code is commented appropriately.
-* Secrets are stored as environment variables.
-
 
 ### Key Dependencies & Platforms
 
@@ -23,13 +21,11 @@ The project adheres to the PEP 8 style guide and follows common best practices, 
 
 - [SQLAlchemy](https://www.sqlalchemy.org/) is the Python SQL toolkit and ORM we'll use handle the lightweight sqlite database. You'll primarily work in app.py and can reference models.py. 
 
-- [Flask-CORS](https://flask-cors.readthedocs.io/en/latest/#) is the extension we'll use to handle cross origin requests from our frontend server. 
-
 - [Auth0](https://auth0.com/docs/) is the authentication and authorization system we'll use to handle users with different roles with more secure and easy ways
 
 - [PostgreSQL](https://www.postgresql.org/) this project is integrated with a popular relational database PostgreSQL, though other relational databases can be used with a little effort.
 
-- [Heroku](https://www.heroku.com/what) is the cloud platform used for deployment
+- [Render](https://render.com/) is the cloud platform used for deployment
 
 
 ### Running Locally
@@ -52,35 +48,20 @@ pip install -r requirements.txt
 
 This will install all of the required packages we selected within the `requirements.txt` file.
 
-#### Database Setup
-With Postgres running, restore a database using the `capstone.psql` file provided. In terminal run:
-
-```bash
-createdb capstone
-psql capstone < capstone.psql
-```
-
 #### Running Tests
 To run the tests, run
 ```bash
-dropdb capstone_test
-createdb capstone_test
-psql capstone_test < capstone.psql
 python test_app.py
 ```
-
-Optionally, you can use `run_test.sh` script.
 
 #### Auth0 Setup
 
 You need to setup an Auth0 account.
 
-Environment variables needed: (setup.sh)
-
 ```bash
 export AUTH0_DOMAIN="xxxxxxxxxx.auth0.com" # Choose your tenant domain
 export ALGORITHMS="RS256"
-export API_AUDIENCE="capstone" # Create an API in Auth0
+export API_AUDIENCE="capstone_final" # Create an API in Auth0
 ```
 
 ##### Roles
@@ -103,22 +84,19 @@ Following permissions should be created under created API settings.
 
 * `view:actors`
 * `view:movies`
-* `delete:actors`
-* `post:actors`
-* `update:actors`
-* `update:movies`
-* `post:movies`
-* `delete:movies`
+* `delete:actor`
+* `delete:movie`
+* `update:actor`
+* `update:movie`
+* `post:movie`
+* `post:actor`
 
-##### Set JWT Tokens in `auth_config.json`
+##### Set JWT Tokens in '.env' (for Production) & '.env_test' (for Test) files.
 
-Use the following link to create users and sign them in. This way, you can generate 
+Use the following link to create users and sign them in. This way, you can generate the three required tokens 
 
 ```
 https://{{YOUR_DOMAIN}}/authorize?audience={{API_IDENTIFIER}}&response_type=token&client_id={{YOUR_CLIENT_ID}}&redirect_uri={{YOUR_CALLBACK_URI}}
-
-https://fsnd-vikasgarg.uk.auth0.com/authorize?audience=capstone_final&response_type=token&client_id=qiOu1ocIuKaBrnS8DQZWh2HWUZ6vfLSU&redirect_uri=http://localhost:8100/tabs/user-page
-
 
 
 ```
@@ -128,8 +106,8 @@ https://fsnd-vikasgarg.uk.auth0.com/authorize?audience=capstone_final&response_t
 1. Initialize and activate a virtualenv:
 
    ```bash
-   virtualenv --no-site-packages env_capstone
-   source env_capstone/bin/activate
+   python -m venv venv
+   ./venv/Scripts/activate
    ```
 
 2. Install the dependencies:
@@ -137,39 +115,31 @@ https://fsnd-vikasgarg.uk.auth0.com/authorize?audience=capstone_final&response_t
     ```bash
     pip install -r requirements.txt
     ```
-3. Configure database path to connect local postgres database in `models.py`
+3. Configure database variables to connect local postgres database in `.env.py`
 
     ```python
-    database_path = "postgres://{}/{}".format('localhost:5432', 'capstone')
+    DB_NAME="casting_prod"
+	DB_USER="vikasgarg"
+	DB_PASSWORD="vikas1"
     ```
-**Note:** For default postgres installation, default user name is `postgres` with no password. Thus, no need to speficify them in database path. You can also omit host and post (localhost:5432). But if you need, you can use this template:
 
-```
-postgresql://[user[:password]@][netloc][:port][/dbname][?param1=value1&...]
-```
 For more details [look at the documentation (31.1.1.2. Connection URIs)](https://www.postgresql.org/docs/9.3/libpq-connect.html)
 
-4. Setup the environment variables for Auth0 under `setup.sh` running:
-	```bash
-	source ./setup.sh 
-	```
 5.  To run the server locally, execute:
 
     ```bash
-    export FLASK_APP=flaskr
+    export FLASK_APP=app.py
     export FLASK_DEBUG=True
     export FLASK_ENVIRONMENT=debug
     flask run --reload
     ```
-
-    Optionally, you can use `run.sh` script.
 
 ## API Documentation
 
 ### Models
 There are two models:
 * Movie
-	* title
+	* name
 	* release_date
 * Actor
 	* name
@@ -195,52 +165,6 @@ The API will return three error types when requests fail:
 - 500: Internal Server Error
 
 ### Endpoints
-
-
-#### GET /movies 
-* Get all movies
-
-* Require `view:movies` permission
-
-* **Example Request:** `curl 'http://localhost:5000/movies'`
-
-* **Expected Result:**
-    ```json
-	{
-		"movies": [
-			{
-			"actors": [
-				{
-				"age": 54,
-				"gender": "M",
-				"id": 1,
-				"movie_id": 2,
-				"name": "Tom Hanks"
-				},
-				{
-				"age": 45,
-				"gender": "M",
-				"id": 4,
-				"movie_id": 2,
-				"name": "Robert Downey, Jr."
-				},
-				{
-				"age": 45,
-				"gender": "F",
-				"id": 5,
-				"movie_id": 2,
-				"name": "Julia Roberts"
-				}
-			],
-			"id": 2,
-			"release_date": "Fri, 04 May 2012 00:00:00 GMT",
-			"title": "Yahşi Batı"
-			},
-			...
-		],
-		"success": true
-    }
-    ```
 	
 #### GET /actors 
 * Get all actors
@@ -254,144 +178,86 @@ The API will return three error types when requests fail:
 	{
 		"actors": [
 			{
-			"age": 45,
-			"gender": "M",
-			"id": 6,
-			"movie_id": 1,
-			"name": "Cem Yılmaz"
+				"age": 62,
+				"gender": "M",
+				"id": 1,
+				"name": "Salman"
 			},
 			{
-			"age": 54,
-			"gender": "M",
-			"id": 1,
-			"movie_id": 2,
-			"name": "Tom Hanks"
+				"age": 56,
+				"gender": "M",
+				"id": 4,
+				"name": "Ajay Devgan"
 			},
 			{
-			"age": 44,
-			"gender": "M",
-			"id": 2,
-			"movie_id": 3,
-			"name": "Brad Pitt"
+				"age": 37,
+				"gender": "M",
+				"id": 8,
+				"name": "Ranvir Singh Upd"
+			},
+			{
+				"age": 94,
+				"gender": "M",
+				"id": 15,
+				"name": "Amrish Puri"
 			}
 		],
 		"success": true
 	}
 	```
-	
-#### POST /movies
-* Creates a new movie.
 
-* Requires `post:movies` permission
-
-* Requires the title and release date.
-
-* **Example Request:** (Create)
-    ```bash
-	curl --location --request POST 'http://localhost:5000/movies' \
-		--header 'Content-Type: application/json' \
-		--data-raw '{
-			"title": "Pek Yakında",
-			"release_date": "19-02-2020"
-		}'
-    ```
-    
-* **Example Response:**
-    ```bash
-	{
-		"success": true
-	}
-    ```
-
-#### POST /actors
+#### POST /actor
 * Creates a new actor.
 
-* Requires `post:actors` permission
+* Requires `post:actor` permission
 
 * Requires the name, age and gender of the actor.
 
 * **Example Request:** (Create)
     ```json
-	curl --location --request POST 'http://localhost:5000/actors' \
+	curl --location --request POST 'http://localhost:5000/actor' \
 		--header 'Content-Type: application/json' \
 		--data-raw '{
-			"name": "Cem Yılmaz",
-			"age": "45",
-			"gender": "M"
-        }'
+						"age": 94,
+						"gender": "M",
+						"name": "Amrish Puri"
+					}'
     ```
     
 * **Example Response:**
     ```json
-	{
-		"success": true
-    }
+		{
+			"actor": {
+				"age": 94,
+				"gender": "M",
+				"id": 16,
+				"name": "Amrish Puri"
+			},
+			"success": true
+		}
     ```
 
-#### DELETE /movies/<int:movie_id>
-* Deletes the movie with given id 
+#### DELETE /actor/<int:actor_id>
 
-* Require `delete:movies` permission
 
-* **Example Request:** `curl --request DELETE 'http://localhost:5000/movies/1'`
-
-* **Example Response:**
-    ```json
-	{
-		"deleted": 1,
-		"success": true
-    }
-    ```
-    
-#### DELETE /actors/<int:actor_id>
 * Deletes the actor with given id 
 
-* Require `delete:actors` permission
+* Require `delete:actor` permission
 
-* **Example Request:** `curl --request DELETE 'http://localhost:5000/actors/1'`
+* **Example Request:** `curl --request DELETE 'http://localhost:5000/actor/1'`
 
 * **Example Response:**
     ```json
-	{
-		"deleted": 1,
-		"success": true
-    }
-    ```
-
-#### PATCH /movies/<movie_id>
-* Updates the movie where <movie_id> is the existing movie id
-
-* Require `update:movies` permission
-
-* Responds with a 404 error if <movie_id> is not found
-
-* Update the corresponding fields for Movie with id <movie_id>
-
-* **Example Request:** 
-	```json
-    curl --location --request PATCH 'http://localhost:5000/movies/1' \
-		--header 'Content-Type: application/json' \
-		--data-raw '{
-			"title": "Eyvah eyvah 2"
-        }'
-  ```
-  
-* **Example Response:**
-    ```json
-	{
-		"success": true, 
-		"updated": {
-			"id": 1, 
-			"release_date": "Wed, 04 May 2016 00:00:00 GMT", 
-			"title": "Eyvah eyvah 2"
+		{
+			"id": 1,
+			"success": true
 		}
-    }
     ```
 	
-#### PATCH /actors/<actor_id>
+#### PATCH /actor/<actor_id>
 * Updates the actor where <actor_id> is the existing actor id
 
-* Require `update:actors`
+* Require `update:actor`
 
 * Responds with a 404 error if <actor_id> is not found
 
@@ -399,10 +265,10 @@ The API will return three error types when requests fail:
 
 * **Example Request:** 
 	```json
-    curl --location --request PATCH 'http://localhost:5000/actors/1' \
+    curl --location --request PATCH 'http://localhost:5000/actor/8' \
 		--header 'Content-Type: application/json' \
 		--data-raw '{
-			"name": "Tom Hanks"
+            "name": "Ranvir Singh"
         }'
   ```
   
@@ -411,10 +277,124 @@ The API will return three error types when requests fail:
 	{
 		"success": true, 
 		"updated": {
-			"age": 54, 
-			"gender": "M", 
-			"id": 1, 
-			"name": "Tom Hanks"
+      		"age": 37,
+            "gender": "M",
+            "id": 8,
+            "name": "Ranvir Singh"
 		}
 	}
 	```
+
+#### GET /movies 
+* Get all movies
+
+* Require `view:movies` permission
+
+* **Example Request:** `curl 'http://localhost:5000/movies'`
+
+* **Expected Result:**
+    ```json
+		{
+			"movies": [
+				{
+					"id": 4,
+					"name": "Jab tak hain Jaan",
+					"release_date": "2023-12-16"
+				},
+				{
+					"id": 5,
+					"name": "Shehjada",
+					"release_date": "2022-10-08"
+				},
+				{
+					"id": 7,
+					"name": "Singh is King",
+					"release_date": "2014-05-06"
+				}
+			],
+			"success": true
+		}    
+	```
+
+
+#### POST /movie
+* Creates a new movie.
+
+* Requires `post:movie` permission
+
+* Requires the title and release date.
+
+* **Example Request:** (Create)
+    ```bash
+	curl --location --request POST 'http://localhost:5000/movie' \
+		--header 'Content-Type: application/json' \
+		--data-raw 
+		'{
+			"name": "Padosan",
+			"release_date": "1966-01-25T00:00:00"
+		}'
+    ```
+    
+* **Example Response:**
+    ```bash
+		{
+			"movie": 
+			{
+				"id": 13,
+				"name": "Padosan",
+				"release_date": "1966-01-25"
+			},
+			"success": true
+		}	
+    ```
+
+
+#### DELETE /movie/<int:movie_id>
+* Deletes the movie with given id 
+
+* Require `delete:movie` permission
+
+* **Example Request:** `curl --request DELETE 'http://localhost:5000/movie/7'`
+
+* **Example Response:**
+    ```json
+		{
+			"id": 7,
+			"success": true
+		}
+    ```
+    
+
+
+#### PATCH /movie/<movie_id>
+* Updates the movie where <movie_id> is the existing movie id
+
+* Require `update:movie` permission
+
+* Responds with a 404 error if <movie_id> is not found
+
+* Update the corresponding fields for Movie with id <movie_id>
+
+* **Example Request:** 
+	```json
+    curl --location --request PATCH 'http://localhost:5000/movie/1' \
+		--header 'Content-Type: application/json' \
+		--data-raw 
+		'{
+    		"release_date": "2016-12-16T00:00:00"
+	    }'
+  ```
+  
+* **Example Response:**
+    ```json
+	{
+		"movie": 
+		{
+			"id": 4,
+			"name": "Jab tak hain Jaan",
+			"release_date": "2016-12-16"
+		},
+		"success": true
+	}	
+    ```
+	
