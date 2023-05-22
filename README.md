@@ -153,16 +153,17 @@ Errors are returned as JSON objects in the following format:
 {
     "success": False, 
     "error": 400,
-    "message": "bad request"
+    "message": "Bad request"
 }
 ```
 The API will return three error types when requests fail:
 - 400: Bad Request
-- 401: Unauthorized
+- 401: Not Authorized
 - 403: Forbidden
-- 404: Resource Not Found
-- 422: Not Processable 
-- 500: Internal Server Error
+- 404: Resource not Found
+- 405: Method not Allowed
+- 422: Request cannot be processed 
+- 500: Internal server error
 
 ### Endpoints
 	
@@ -214,26 +215,27 @@ The API will return three error types when requests fail:
 * Requires the name, age and gender of the actor.
 
 * **Example Request:** (Create)
-    ```json
+    ```bash
 	curl --location --request POST 'http://localhost:5000/actor' \
 		--header 'Content-Type: application/json' \
-		--data-raw '{
-						"age": 94,
-						"gender": "M",
-						"name": "Amrish Puri"
-					}'
+		--data-raw 
+		'{
+			"age": 94,
+			"gender": "M",
+			"name": "Amrish Puri"
+		}'
     ```
     
 * **Example Response:**
     ```json
 		{
-			"actor": {
-				"age": 94,
-				"gender": "M",
-				"id": 16,
-				"name": "Amrish Puri"
-			},
-			"success": true
+		"actor": {
+			"age": 94,
+			"gender": "M",
+			"id": 16,
+			"name": "Amrish Puri"
+		},
+		"success": true
 		}
     ```
 
@@ -264,10 +266,11 @@ The API will return three error types when requests fail:
 * Update the given fields for Actor with id <actor_id>
 
 * **Example Request:** 
-	```json
+	```bash
     curl --location --request PATCH 'http://localhost:5000/actor/8' \
 		--header 'Content-Type: application/json' \
-		--data-raw '{
+		--data-raw 
+		'{
             "name": "Ranvir Singh"
         }'
   ```
@@ -336,7 +339,7 @@ The API will return three error types when requests fail:
     ```
     
 * **Example Response:**
-    ```bash
+    ```json
 		{
 			"movie": 
 			{
@@ -376,7 +379,7 @@ The API will return three error types when requests fail:
 * Update the corresponding fields for Movie with id <movie_id>
 
 * **Example Request:** 
-	```json
+	```bash
     curl --location --request PATCH 'http://localhost:5000/movie/1' \
 		--header 'Content-Type: application/json' \
 		--data-raw 
