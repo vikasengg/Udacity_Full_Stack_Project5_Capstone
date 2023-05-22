@@ -204,6 +204,72 @@ def create_app(db_name="", test_config=None):
         return jsonify({"success": True,
                         "actor": actor_tbu.serialized_actor()})
 
+    @app.errorhandler(400)
+    def bad_request(error):
+        return jsonify({
+            "success": False,
+            "error": 400,
+            "message": "Bad request"
+        }), 400
+
+    @app.errorhandler(401)
+    def auth_error(error):
+        return jsonify({
+            "success": False,
+            "error": 401,
+            "message": "Not Authorized"
+        }), 401
+
+    @app.errorhandler(403)
+    def auth_error(error):
+        return jsonify({
+            "success": False,
+            "error": 403,
+            "message": "Forbidden"
+        }), 403
+
+    @app.errorhandler(404)
+    def resource_not_found(error):
+        return jsonify({
+            "success": False,
+            "message": "Resource not found",
+            "error": 404
+        }), 404
+
+    @app.errorhandler(405)
+    def not_allowed(error):
+        return jsonify({
+            "success": False,
+            "error": 405,
+            "message": "Method not allowed"
+        }), 405
+
+    @app.errorhandler(422)
+    def not_processable(error):
+        return jsonify({
+            "success": False,
+            "error": 422,
+            "message": "Request cannot be processed"
+        }), 422
+
+    @app.errorhandler(500)
+    def server_error(error):
+        return jsonify({
+            "success": False,
+            "message": "Internal server error",
+            "error": 500
+        }), 500
+
+    # Auth Error Capture
+    @app.errorhandler(AuthError)
+    def auth_error(error):
+        print(error)
+        return jsonify({
+            "success": False,
+            "error": error.status_code,
+            "message": error.error
+        }), error.status_code
+
     return app
 
 app = create_app()

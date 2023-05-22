@@ -1,0 +1,538 @@
+{
+	"info": {
+		"_postman_id": "97f64ad9-b6b0-4269-a134-0131a913972c",
+		"name": "Udacity-FS-Capstone-Casting V2.0",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "9121031"
+	},
+	"item": [
+		{
+			"name": "Casting Assistant - Get All Actors",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhZRTZvemNScG50d2VXR1NWYS1FWiJ9.eyJpc3MiOiJodHRwczovL2ZzbmQtdmlrYXNnYXJnLnVrLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2NDY2YzRmYjZkMzU2NzE2ZjRiNTBkMzkiLCJhdWQiOiJjYXBzdG9uZV9maW5hbCIsImlhdCI6MTY4NDc5MDEwNCwiZXhwIjoxNjg0Nzk3MzA0LCJhenAiOiJxaU91MW9jSXVLYUJyblM4RFFaV2gySFdVWjZ2ZkxTVSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsidmlldzphY3RvcnMiLCJ2aWV3Om1vdmllcyJdfQ.wRV-9pAOQcljvqywFNJfHS9meEZTzggel3p8YUGH2v60TpXFRfun14aTFAKsdSbeYqIuGK_oTnBDcHDUtGUMsXjDo85qoWM09i8Xrfu734DaWx6XjAkFCtiheWj4z7KyI8QkZVM0Dz3SMqYEztlor1f0fnG7WH50dE9Ju7DdyRXXGP4NsF9OGBlOneV60n-w6Qbzfq_589tH2tcj5uiFl5FE3kzlwihasJ1Z3PZ-ygvdoPhpSLE3enNsTgLZPTBI1S_VmaYAv6fi9As9qL5fUgB2sklhR7TeadIgLF-IJaKuPsGXrZ8DaJqTVNoDyMGFgZ8cHLu5BDdE-jodKvD02g"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"age\": 65,\r\n    \"gender\": \"M\",\r\n    \"name\": \"Akshay Kumar\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:5000/actors"
+			},
+			"response": []
+		},
+		{
+			"name": "Casting Assistant - All Movies",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhZRTZvemNScG50d2VXR1NWYS1FWiJ9.eyJpc3MiOiJodHRwczovL2ZzbmQtdmlrYXNnYXJnLnVrLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2NDY2YzRmYjZkMzU2NzE2ZjRiNTBkMzkiLCJhdWQiOiJjYXBzdG9uZV9maW5hbCIsImlhdCI6MTY4NDc5MDEwNCwiZXhwIjoxNjg0Nzk3MzA0LCJhenAiOiJxaU91MW9jSXVLYUJyblM4RFFaV2gySFdVWjZ2ZkxTVSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsidmlldzphY3RvcnMiLCJ2aWV3Om1vdmllcyJdfQ.wRV-9pAOQcljvqywFNJfHS9meEZTzggel3p8YUGH2v60TpXFRfun14aTFAKsdSbeYqIuGK_oTnBDcHDUtGUMsXjDo85qoWM09i8Xrfu734DaWx6XjAkFCtiheWj4z7KyI8QkZVM0Dz3SMqYEztlor1f0fnG7WH50dE9Ju7DdyRXXGP4NsF9OGBlOneV60n-w6Qbzfq_589tH2tcj5uiFl5FE3kzlwihasJ1Z3PZ-ygvdoPhpSLE3enNsTgLZPTBI1S_VmaYAv6fi9As9qL5fUgB2sklhR7TeadIgLF-IJaKuPsGXrZ8DaJqTVNoDyMGFgZ8cHLu5BDdE-jodKvD02g"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:5000/movies"
+			},
+			"response": []
+		},
+		{
+			"name": "Casting Assistant - Patch an Actor",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhZRTZvemNScG50d2VXR1NWYS1FWiJ9.eyJpc3MiOiJodHRwczovL2ZzbmQtdmlrYXNnYXJnLnVrLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2NDY2YzRmYjZkMzU2NzE2ZjRiNTBkMzkiLCJhdWQiOiJjYXBzdG9uZV9maW5hbCIsImlhdCI6MTY4NDc5MDEwNCwiZXhwIjoxNjg0Nzk3MzA0LCJhenAiOiJxaU91MW9jSXVLYUJyblM4RFFaV2gySFdVWjZ2ZkxTVSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsidmlldzphY3RvcnMiLCJ2aWV3Om1vdmllcyJdfQ.wRV-9pAOQcljvqywFNJfHS9meEZTzggel3p8YUGH2v60TpXFRfun14aTFAKsdSbeYqIuGK_oTnBDcHDUtGUMsXjDo85qoWM09i8Xrfu734DaWx6XjAkFCtiheWj4z7KyI8QkZVM0Dz3SMqYEztlor1f0fnG7WH50dE9Ju7DdyRXXGP4NsF9OGBlOneV60n-w6Qbzfq_589tH2tcj5uiFl5FE3kzlwihasJ1Z3PZ-ygvdoPhpSLE3enNsTgLZPTBI1S_VmaYAv6fi9As9qL5fUgB2sklhR7TeadIgLF-IJaKuPsGXrZ8DaJqTVNoDyMGFgZ8cHLu5BDdE-jodKvD02g"
+					}
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"age\": 65,\r\n    \"gender\": \"M\",\r\n    \"name\": \"Akshay Kumar\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:5000/actor/2"
+			},
+			"response": []
+		},
+		{
+			"name": "Casting Assistant - Patch Movie",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhZRTZvemNScG50d2VXR1NWYS1FWiJ9.eyJpc3MiOiJodHRwczovL2ZzbmQtdmlrYXNnYXJnLnVrLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2NDY2YzRmYjZkMzU2NzE2ZjRiNTBkMzkiLCJhdWQiOiJjYXBzdG9uZV9maW5hbCIsImlhdCI6MTY4NDc5MDEwNCwiZXhwIjoxNjg0Nzk3MzA0LCJhenAiOiJxaU91MW9jSXVLYUJyblM4RFFaV2gySFdVWjZ2ZkxTVSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsidmlldzphY3RvcnMiLCJ2aWV3Om1vdmllcyJdfQ.wRV-9pAOQcljvqywFNJfHS9meEZTzggel3p8YUGH2v60TpXFRfun14aTFAKsdSbeYqIuGK_oTnBDcHDUtGUMsXjDo85qoWM09i8Xrfu734DaWx6XjAkFCtiheWj4z7KyI8QkZVM0Dz3SMqYEztlor1f0fnG7WH50dE9Ju7DdyRXXGP4NsF9OGBlOneV60n-w6Qbzfq_589tH2tcj5uiFl5FE3kzlwihasJ1Z3PZ-ygvdoPhpSLE3enNsTgLZPTBI1S_VmaYAv6fi9As9qL5fUgB2sklhR7TeadIgLF-IJaKuPsGXrZ8DaJqTVNoDyMGFgZ8cHLu5BDdE-jodKvD02g"
+					}
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"kal ho na ho 2\",\r\n    \"release_date\": \"2023-01-01\"\r\n\r\n}"
+				},
+				"url": "http://127.0.0.1:5000/movie/2"
+			},
+			"response": []
+		},
+		{
+			"name": "Casting Assistant - Post an Actor",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhZRTZvemNScG50d2VXR1NWYS1FWiJ9.eyJpc3MiOiJodHRwczovL2ZzbmQtdmlrYXNnYXJnLnVrLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2NDY2YzRmYjZkMzU2NzE2ZjRiNTBkMzkiLCJhdWQiOiJjYXBzdG9uZV9maW5hbCIsImlhdCI6MTY4NDc5MDEwNCwiZXhwIjoxNjg0Nzk3MzA0LCJhenAiOiJxaU91MW9jSXVLYUJyblM4RFFaV2gySFdVWjZ2ZkxTVSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsidmlldzphY3RvcnMiLCJ2aWV3Om1vdmllcyJdfQ.wRV-9pAOQcljvqywFNJfHS9meEZTzggel3p8YUGH2v60TpXFRfun14aTFAKsdSbeYqIuGK_oTnBDcHDUtGUMsXjDo85qoWM09i8Xrfu734DaWx6XjAkFCtiheWj4z7KyI8QkZVM0Dz3SMqYEztlor1f0fnG7WH50dE9Ju7DdyRXXGP4NsF9OGBlOneV60n-w6Qbzfq_589tH2tcj5uiFl5FE3kzlwihasJ1Z3PZ-ygvdoPhpSLE3enNsTgLZPTBI1S_VmaYAv6fi9As9qL5fUgB2sklhR7TeadIgLF-IJaKuPsGXrZ8DaJqTVNoDyMGFgZ8cHLu5BDdE-jodKvD02g"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"age\": 90,\r\n    \"gender\": \"M\",\r\n    \"name\": \"Shashi Kapoor\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:5000/actor"
+			},
+			"response": []
+		},
+		{
+			"name": "Casting Assistant - Post a Movie",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhZRTZvemNScG50d2VXR1NWYS1FWiJ9.eyJpc3MiOiJodHRwczovL2ZzbmQtdmlrYXNnYXJnLnVrLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2NDY2YzRmYjZkMzU2NzE2ZjRiNTBkMzkiLCJhdWQiOiJjYXBzdG9uZV9maW5hbCIsImlhdCI6MTY4NDc5MDEwNCwiZXhwIjoxNjg0Nzk3MzA0LCJhenAiOiJxaU91MW9jSXVLYUJyblM4RFFaV2gySFdVWjZ2ZkxTVSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsidmlldzphY3RvcnMiLCJ2aWV3Om1vdmllcyJdfQ.wRV-9pAOQcljvqywFNJfHS9meEZTzggel3p8YUGH2v60TpXFRfun14aTFAKsdSbeYqIuGK_oTnBDcHDUtGUMsXjDo85qoWM09i8Xrfu734DaWx6XjAkFCtiheWj4z7KyI8QkZVM0Dz3SMqYEztlor1f0fnG7WH50dE9Ju7DdyRXXGP4NsF9OGBlOneV60n-w6Qbzfq_589tH2tcj5uiFl5FE3kzlwihasJ1Z3PZ-ygvdoPhpSLE3enNsTgLZPTBI1S_VmaYAv6fi9As9qL5fUgB2sklhR7TeadIgLF-IJaKuPsGXrZ8DaJqTVNoDyMGFgZ8cHLu5BDdE-jodKvD02g"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Padmavat\",\r\n    \"release_date\": \"2018-01-25T00:00:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:5000/movie"
+			},
+			"response": []
+		},
+		{
+			"name": "Casting Assistant - Delete an Actor",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhZRTZvemNScG50d2VXR1NWYS1FWiJ9.eyJpc3MiOiJodHRwczovL2ZzbmQtdmlrYXNnYXJnLnVrLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2NDY2YzRmYjZkMzU2NzE2ZjRiNTBkMzkiLCJhdWQiOiJjYXBzdG9uZV9maW5hbCIsImlhdCI6MTY4NDc5MDEwNCwiZXhwIjoxNjg0Nzk3MzA0LCJhenAiOiJxaU91MW9jSXVLYUJyblM4RFFaV2gySFdVWjZ2ZkxTVSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsidmlldzphY3RvcnMiLCJ2aWV3Om1vdmllcyJdfQ.wRV-9pAOQcljvqywFNJfHS9meEZTzggel3p8YUGH2v60TpXFRfun14aTFAKsdSbeYqIuGK_oTnBDcHDUtGUMsXjDo85qoWM09i8Xrfu734DaWx6XjAkFCtiheWj4z7KyI8QkZVM0Dz3SMqYEztlor1f0fnG7WH50dE9Ju7DdyRXXGP4NsF9OGBlOneV60n-w6Qbzfq_589tH2tcj5uiFl5FE3kzlwihasJ1Z3PZ-ygvdoPhpSLE3enNsTgLZPTBI1S_VmaYAv6fi9As9qL5fUgB2sklhR7TeadIgLF-IJaKuPsGXrZ8DaJqTVNoDyMGFgZ8cHLu5BDdE-jodKvD02g"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"age\": 65,\r\n    \"gender\": \"M\",\r\n    \"name\": \"Akshay Kumar\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:5000/actor/2"
+			},
+			"response": []
+		},
+		{
+			"name": "Casting Assistant - Delete a Movie",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhZRTZvemNScG50d2VXR1NWYS1FWiJ9.eyJpc3MiOiJodHRwczovL2ZzbmQtdmlrYXNnYXJnLnVrLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2NDY2YzRmYjZkMzU2NzE2ZjRiNTBkMzkiLCJhdWQiOiJjYXBzdG9uZV9maW5hbCIsImlhdCI6MTY4NDc5MDEwNCwiZXhwIjoxNjg0Nzk3MzA0LCJhenAiOiJxaU91MW9jSXVLYUJyblM4RFFaV2gySFdVWjZ2ZkxTVSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsidmlldzphY3RvcnMiLCJ2aWV3Om1vdmllcyJdfQ.wRV-9pAOQcljvqywFNJfHS9meEZTzggel3p8YUGH2v60TpXFRfun14aTFAKsdSbeYqIuGK_oTnBDcHDUtGUMsXjDo85qoWM09i8Xrfu734DaWx6XjAkFCtiheWj4z7KyI8QkZVM0Dz3SMqYEztlor1f0fnG7WH50dE9Ju7DdyRXXGP4NsF9OGBlOneV60n-w6Qbzfq_589tH2tcj5uiFl5FE3kzlwihasJ1Z3PZ-ygvdoPhpSLE3enNsTgLZPTBI1S_VmaYAv6fi9As9qL5fUgB2sklhR7TeadIgLF-IJaKuPsGXrZ8DaJqTVNoDyMGFgZ8cHLu5BDdE-jodKvD02g"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"kal ho na ho 2\",\r\n    \"release_date\": \"2023-01-01\"\r\n\r\n}"
+				},
+				"url": "http://127.0.0.1:5000/movie/2"
+			},
+			"response": []
+		},
+		{
+			"name": "Casting Director - Get All Actors",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhZRTZvemNScG50d2VXR1NWYS1FWiJ9.eyJpc3MiOiJodHRwczovL2ZzbmQtdmlrYXNnYXJnLnVrLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2NDZhNmZlOGEyMjk4Y2VmNjY4ZDFiNTIiLCJhdWQiOiJjYXBzdG9uZV9maW5hbCIsImlhdCI6MTY4NDc5MDEzNSwiZXhwIjoxNjg0Nzk3MzM1LCJhenAiOiJxaU91MW9jSXVLYUJyblM4RFFaV2gySFdVWjZ2ZkxTVSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9yIiwicG9zdDphY3RvciIsInVwZGF0ZTphY3RvciIsInVwZGF0ZTptb3ZpZSIsInZpZXc6YWN0b3JzIiwidmlldzptb3ZpZXMiXX0.KfADf7i3cPDYpeU8elaaP_7wq5hppabGKk9RUP1-tx6fpl52dHqO2sMm8yF8BvWvHRvXv-Jjn4bQOBmFZUuF92KC6QLms6XYGn28TU2CG7bJyDZTo0zaRBDqz_0qxx5XXbfHfUMVixEDZdBQGkb3u9qOgIr9p8zugebHjP25U_MgxLVaxYTdPdbVTgg_Dvcnt1s4UTxFDLUpcVrJSx0PghN7pULvmATTc24eFojKxywOAxFBQizgIYYanTS1felPSfa-wMm6YPtvVWHoy0D807rzLlnQV1GbI6Wee-0BDFuztmF5R8Osnn11e3DO8mICZxShgqb54N_oDXg3a2SaUg"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"age\": 65,\r\n    \"gender\": \"M\",\r\n    \"name\": \"Akshay Kumar\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:5000/actors"
+			},
+			"response": []
+		},
+		{
+			"name": "Casting Director - All Movies",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhZRTZvemNScG50d2VXR1NWYS1FWiJ9.eyJpc3MiOiJodHRwczovL2ZzbmQtdmlrYXNnYXJnLnVrLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2NDZhNmZlOGEyMjk4Y2VmNjY4ZDFiNTIiLCJhdWQiOiJjYXBzdG9uZV9maW5hbCIsImlhdCI6MTY4NDc5MDEzNSwiZXhwIjoxNjg0Nzk3MzM1LCJhenAiOiJxaU91MW9jSXVLYUJyblM4RFFaV2gySFdVWjZ2ZkxTVSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9yIiwicG9zdDphY3RvciIsInVwZGF0ZTphY3RvciIsInVwZGF0ZTptb3ZpZSIsInZpZXc6YWN0b3JzIiwidmlldzptb3ZpZXMiXX0.KfADf7i3cPDYpeU8elaaP_7wq5hppabGKk9RUP1-tx6fpl52dHqO2sMm8yF8BvWvHRvXv-Jjn4bQOBmFZUuF92KC6QLms6XYGn28TU2CG7bJyDZTo0zaRBDqz_0qxx5XXbfHfUMVixEDZdBQGkb3u9qOgIr9p8zugebHjP25U_MgxLVaxYTdPdbVTgg_Dvcnt1s4UTxFDLUpcVrJSx0PghN7pULvmATTc24eFojKxywOAxFBQizgIYYanTS1felPSfa-wMm6YPtvVWHoy0D807rzLlnQV1GbI6Wee-0BDFuztmF5R8Osnn11e3DO8mICZxShgqb54N_oDXg3a2SaUg"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:5000/movies"
+			},
+			"response": []
+		},
+		{
+			"name": "Casting Director - Patch an Actor",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhZRTZvemNScG50d2VXR1NWYS1FWiJ9.eyJpc3MiOiJodHRwczovL2ZzbmQtdmlrYXNnYXJnLnVrLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2NDZhNmZlOGEyMjk4Y2VmNjY4ZDFiNTIiLCJhdWQiOiJjYXBzdG9uZV9maW5hbCIsImlhdCI6MTY4NDc5MDEzNSwiZXhwIjoxNjg0Nzk3MzM1LCJhenAiOiJxaU91MW9jSXVLYUJyblM4RFFaV2gySFdVWjZ2ZkxTVSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9yIiwicG9zdDphY3RvciIsInVwZGF0ZTphY3RvciIsInVwZGF0ZTptb3ZpZSIsInZpZXc6YWN0b3JzIiwidmlldzptb3ZpZXMiXX0.KfADf7i3cPDYpeU8elaaP_7wq5hppabGKk9RUP1-tx6fpl52dHqO2sMm8yF8BvWvHRvXv-Jjn4bQOBmFZUuF92KC6QLms6XYGn28TU2CG7bJyDZTo0zaRBDqz_0qxx5XXbfHfUMVixEDZdBQGkb3u9qOgIr9p8zugebHjP25U_MgxLVaxYTdPdbVTgg_Dvcnt1s4UTxFDLUpcVrJSx0PghN7pULvmATTc24eFojKxywOAxFBQizgIYYanTS1felPSfa-wMm6YPtvVWHoy0D807rzLlnQV1GbI6Wee-0BDFuztmF5R8Osnn11e3DO8mICZxShgqb54N_oDXg3a2SaUg"
+					}
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"age\": 60,\r\n    \"gender\": \"F\",\r\n    \"name\": \"Madhuri Dixit\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:5000/actor/5"
+			},
+			"response": []
+		},
+		{
+			"name": "Casting Director - Patch Movie",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhZRTZvemNScG50d2VXR1NWYS1FWiJ9.eyJpc3MiOiJodHRwczovL2ZzbmQtdmlrYXNnYXJnLnVrLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2NDZhNmZlOGEyMjk4Y2VmNjY4ZDFiNTIiLCJhdWQiOiJjYXBzdG9uZV9maW5hbCIsImlhdCI6MTY4NDc5MDEzNSwiZXhwIjoxNjg0Nzk3MzM1LCJhenAiOiJxaU91MW9jSXVLYUJyblM4RFFaV2gySFdVWjZ2ZkxTVSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9yIiwicG9zdDphY3RvciIsInVwZGF0ZTphY3RvciIsInVwZGF0ZTptb3ZpZSIsInZpZXc6YWN0b3JzIiwidmlldzptb3ZpZXMiXX0.KfADf7i3cPDYpeU8elaaP_7wq5hppabGKk9RUP1-tx6fpl52dHqO2sMm8yF8BvWvHRvXv-Jjn4bQOBmFZUuF92KC6QLms6XYGn28TU2CG7bJyDZTo0zaRBDqz_0qxx5XXbfHfUMVixEDZdBQGkb3u9qOgIr9p8zugebHjP25U_MgxLVaxYTdPdbVTgg_Dvcnt1s4UTxFDLUpcVrJSx0PghN7pULvmATTc24eFojKxywOAxFBQizgIYYanTS1felPSfa-wMm6YPtvVWHoy0D807rzLlnQV1GbI6Wee-0BDFuztmF5R8Osnn11e3DO8mICZxShgqb54N_oDXg3a2SaUg"
+					}
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Padmavat\",\r\n    \"release_date\": \"2018-01-25T00:00:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:5000/movie/3"
+			},
+			"response": []
+		},
+		{
+			"name": "Casting Director - Post an Actor",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhZRTZvemNScG50d2VXR1NWYS1FWiJ9.eyJpc3MiOiJodHRwczovL2ZzbmQtdmlrYXNnYXJnLnVrLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2NDZhNmZlOGEyMjk4Y2VmNjY4ZDFiNTIiLCJhdWQiOiJjYXBzdG9uZV9maW5hbCIsImlhdCI6MTY4NDc5MDEzNSwiZXhwIjoxNjg0Nzk3MzM1LCJhenAiOiJxaU91MW9jSXVLYUJyblM4RFFaV2gySFdVWjZ2ZkxTVSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9yIiwicG9zdDphY3RvciIsInVwZGF0ZTphY3RvciIsInVwZGF0ZTptb3ZpZSIsInZpZXc6YWN0b3JzIiwidmlldzptb3ZpZXMiXX0.KfADf7i3cPDYpeU8elaaP_7wq5hppabGKk9RUP1-tx6fpl52dHqO2sMm8yF8BvWvHRvXv-Jjn4bQOBmFZUuF92KC6QLms6XYGn28TU2CG7bJyDZTo0zaRBDqz_0qxx5XXbfHfUMVixEDZdBQGkb3u9qOgIr9p8zugebHjP25U_MgxLVaxYTdPdbVTgg_Dvcnt1s4UTxFDLUpcVrJSx0PghN7pULvmATTc24eFojKxywOAxFBQizgIYYanTS1felPSfa-wMm6YPtvVWHoy0D807rzLlnQV1GbI6Wee-0BDFuztmF5R8Osnn11e3DO8mICZxShgqb54N_oDXg3a2SaUg"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"age\": 90,\r\n    \"gender\": \"M\",\r\n    \"name\": \"Shashi Kapoor\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:5000/actor"
+			},
+			"response": []
+		},
+		{
+			"name": "Casting Director - Post a Movie",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhZRTZvemNScG50d2VXR1NWYS1FWiJ9.eyJpc3MiOiJodHRwczovL2ZzbmQtdmlrYXNnYXJnLnVrLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2NDZhNmZlOGEyMjk4Y2VmNjY4ZDFiNTIiLCJhdWQiOiJjYXBzdG9uZV9maW5hbCIsImlhdCI6MTY4NDc5MDEzNSwiZXhwIjoxNjg0Nzk3MzM1LCJhenAiOiJxaU91MW9jSXVLYUJyblM4RFFaV2gySFdVWjZ2ZkxTVSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9yIiwicG9zdDphY3RvciIsInVwZGF0ZTphY3RvciIsInVwZGF0ZTptb3ZpZSIsInZpZXc6YWN0b3JzIiwidmlldzptb3ZpZXMiXX0.KfADf7i3cPDYpeU8elaaP_7wq5hppabGKk9RUP1-tx6fpl52dHqO2sMm8yF8BvWvHRvXv-Jjn4bQOBmFZUuF92KC6QLms6XYGn28TU2CG7bJyDZTo0zaRBDqz_0qxx5XXbfHfUMVixEDZdBQGkb3u9qOgIr9p8zugebHjP25U_MgxLVaxYTdPdbVTgg_Dvcnt1s4UTxFDLUpcVrJSx0PghN7pULvmATTc24eFojKxywOAxFBQizgIYYanTS1felPSfa-wMm6YPtvVWHoy0D807rzLlnQV1GbI6Wee-0BDFuztmF5R8Osnn11e3DO8mICZxShgqb54N_oDXg3a2SaUg"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Padmavat\",\r\n    \"release_date\": \"2018-01-25T00:00:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:5000/movie"
+			},
+			"response": []
+		},
+		{
+			"name": "Casting Director - Delete Actor",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhZRTZvemNScG50d2VXR1NWYS1FWiJ9.eyJpc3MiOiJodHRwczovL2ZzbmQtdmlrYXNnYXJnLnVrLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2NDZhNmZlOGEyMjk4Y2VmNjY4ZDFiNTIiLCJhdWQiOiJjYXBzdG9uZV9maW5hbCIsImlhdCI6MTY4NDc5MDEzNSwiZXhwIjoxNjg0Nzk3MzM1LCJhenAiOiJxaU91MW9jSXVLYUJyblM4RFFaV2gySFdVWjZ2ZkxTVSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9yIiwicG9zdDphY3RvciIsInVwZGF0ZTphY3RvciIsInVwZGF0ZTptb3ZpZSIsInZpZXc6YWN0b3JzIiwidmlldzptb3ZpZXMiXX0.KfADf7i3cPDYpeU8elaaP_7wq5hppabGKk9RUP1-tx6fpl52dHqO2sMm8yF8BvWvHRvXv-Jjn4bQOBmFZUuF92KC6QLms6XYGn28TU2CG7bJyDZTo0zaRBDqz_0qxx5XXbfHfUMVixEDZdBQGkb3u9qOgIr9p8zugebHjP25U_MgxLVaxYTdPdbVTgg_Dvcnt1s4UTxFDLUpcVrJSx0PghN7pULvmATTc24eFojKxywOAxFBQizgIYYanTS1felPSfa-wMm6YPtvVWHoy0D807rzLlnQV1GbI6Wee-0BDFuztmF5R8Osnn11e3DO8mICZxShgqb54N_oDXg3a2SaUg"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"kal ho na ho 2\",\r\n    \"release_date\": \"2023-01-01\"\r\n\r\n}"
+				},
+				"url": "http://127.0.0.1:5000/actor/2"
+			},
+			"response": []
+		},
+		{
+			"name": "Casting Director - Delete a Movie",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhZRTZvemNScG50d2VXR1NWYS1FWiJ9.eyJpc3MiOiJodHRwczovL2ZzbmQtdmlrYXNnYXJnLnVrLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2NDZhNmZlOGEyMjk4Y2VmNjY4ZDFiNTIiLCJhdWQiOiJjYXBzdG9uZV9maW5hbCIsImlhdCI6MTY4NDc5MDEzNSwiZXhwIjoxNjg0Nzk3MzM1LCJhenAiOiJxaU91MW9jSXVLYUJyblM4RFFaV2gySFdVWjZ2ZkxTVSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9yIiwicG9zdDphY3RvciIsInVwZGF0ZTphY3RvciIsInVwZGF0ZTptb3ZpZSIsInZpZXc6YWN0b3JzIiwidmlldzptb3ZpZXMiXX0.KfADf7i3cPDYpeU8elaaP_7wq5hppabGKk9RUP1-tx6fpl52dHqO2sMm8yF8BvWvHRvXv-Jjn4bQOBmFZUuF92KC6QLms6XYGn28TU2CG7bJyDZTo0zaRBDqz_0qxx5XXbfHfUMVixEDZdBQGkb3u9qOgIr9p8zugebHjP25U_MgxLVaxYTdPdbVTgg_Dvcnt1s4UTxFDLUpcVrJSx0PghN7pULvmATTc24eFojKxywOAxFBQizgIYYanTS1felPSfa-wMm6YPtvVWHoy0D807rzLlnQV1GbI6Wee-0BDFuztmF5R8Osnn11e3DO8mICZxShgqb54N_oDXg3a2SaUg"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"kal ho na ho 2\",\r\n    \"release_date\": \"2023-01-01\"\r\n\r\n}"
+				},
+				"url": "http://127.0.0.1:5000/movie/3"
+			},
+			"response": []
+		},
+		{
+			"name": "Executive Producer - Get All Actors",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhZRTZvemNScG50d2VXR1NWYS1FWiJ9.eyJpc3MiOiJodHRwczovL2ZzbmQtdmlrYXNnYXJnLnVrLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2NDZhNzAwODYwM2U5MDg1ZTQ0NGQzNTAiLCJhdWQiOiJjYXBzdG9uZV9maW5hbCIsImlhdCI6MTY4NDc5MDE2MiwiZXhwIjoxNjg0Nzk3MzYyLCJhenAiOiJxaU91MW9jSXVLYUJyblM4RFFaV2gySFdVWjZ2ZkxTVSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9yIiwiZGVsZXRlOm1vdmllIiwicG9zdDphY3RvciIsInBvc3Q6bW92aWUiLCJ1cGRhdGU6YWN0b3IiLCJ1cGRhdGU6bW92aWUiLCJ2aWV3OmFjdG9ycyIsInZpZXc6bW92aWVzIl19.dRQG5n5jWRcFTeHQIX4gmYm8ih5XkMc-DyCsCL5NZzxorPnwmvSvVnggNYLiaMNchpQeuGwQesmo1yIHkTjzgrbGUQTgUwqt-zkfuQnRIJt6Ahvhn6UTfApM3_lVSwHaw9EeZ9gPZ1MQFvNhKatLNkKwRToNJBnQqM1Grka8kxtS3vjhsyG1TFkLfinFjAbSPLSw6O7nZJZnEPZOYIzSsIDkj0dyO88ihohodkglHABPolKBd-XEjNijj5036g3EyrKqIKzRUYZ2PIIt-kVT_zTwF2_GK0JYHlqHi6b4DQALCL40KegrIpCXt2OBDsYdtwxtkLpa6HMo4frIbDpz4Q"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"age\": 65,\r\n    \"gender\": \"M\",\r\n    \"name\": \"Akshay Kumar\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:5000/actors"
+			},
+			"response": []
+		},
+		{
+			"name": "Executive Producer - All Movies",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhZRTZvemNScG50d2VXR1NWYS1FWiJ9.eyJpc3MiOiJodHRwczovL2ZzbmQtdmlrYXNnYXJnLnVrLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2NDZhNzAwODYwM2U5MDg1ZTQ0NGQzNTAiLCJhdWQiOiJjYXBzdG9uZV9maW5hbCIsImlhdCI6MTY4NDc5MDE2MiwiZXhwIjoxNjg0Nzk3MzYyLCJhenAiOiJxaU91MW9jSXVLYUJyblM4RFFaV2gySFdVWjZ2ZkxTVSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9yIiwiZGVsZXRlOm1vdmllIiwicG9zdDphY3RvciIsInBvc3Q6bW92aWUiLCJ1cGRhdGU6YWN0b3IiLCJ1cGRhdGU6bW92aWUiLCJ2aWV3OmFjdG9ycyIsInZpZXc6bW92aWVzIl19.dRQG5n5jWRcFTeHQIX4gmYm8ih5XkMc-DyCsCL5NZzxorPnwmvSvVnggNYLiaMNchpQeuGwQesmo1yIHkTjzgrbGUQTgUwqt-zkfuQnRIJt6Ahvhn6UTfApM3_lVSwHaw9EeZ9gPZ1MQFvNhKatLNkKwRToNJBnQqM1Grka8kxtS3vjhsyG1TFkLfinFjAbSPLSw6O7nZJZnEPZOYIzSsIDkj0dyO88ihohodkglHABPolKBd-XEjNijj5036g3EyrKqIKzRUYZ2PIIt-kVT_zTwF2_GK0JYHlqHi6b4DQALCL40KegrIpCXt2OBDsYdtwxtkLpa6HMo4frIbDpz4Q"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:5000/movies"
+			},
+			"response": []
+		},
+		{
+			"name": "Executive Producer- Patch an Actor",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhZRTZvemNScG50d2VXR1NWYS1FWiJ9.eyJpc3MiOiJodHRwczovL2ZzbmQtdmlrYXNnYXJnLnVrLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2NDZhNzAwODYwM2U5MDg1ZTQ0NGQzNTAiLCJhdWQiOiJjYXBzdG9uZV9maW5hbCIsImlhdCI6MTY4NDc5MDE2MiwiZXhwIjoxNjg0Nzk3MzYyLCJhenAiOiJxaU91MW9jSXVLYUJyblM4RFFaV2gySFdVWjZ2ZkxTVSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9yIiwiZGVsZXRlOm1vdmllIiwicG9zdDphY3RvciIsInBvc3Q6bW92aWUiLCJ1cGRhdGU6YWN0b3IiLCJ1cGRhdGU6bW92aWUiLCJ2aWV3OmFjdG9ycyIsInZpZXc6bW92aWVzIl19.dRQG5n5jWRcFTeHQIX4gmYm8ih5XkMc-DyCsCL5NZzxorPnwmvSvVnggNYLiaMNchpQeuGwQesmo1yIHkTjzgrbGUQTgUwqt-zkfuQnRIJt6Ahvhn6UTfApM3_lVSwHaw9EeZ9gPZ1MQFvNhKatLNkKwRToNJBnQqM1Grka8kxtS3vjhsyG1TFkLfinFjAbSPLSw6O7nZJZnEPZOYIzSsIDkj0dyO88ihohodkglHABPolKBd-XEjNijj5036g3EyrKqIKzRUYZ2PIIt-kVT_zTwF2_GK0JYHlqHi6b4DQALCL40KegrIpCXt2OBDsYdtwxtkLpa6HMo4frIbDpz4Q"
+					}
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"age\": 65,\r\n    \"gender\": \"M\",\r\n    \"name\": \"Akshay Kumar\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:5000/actor/2"
+			},
+			"response": []
+		},
+		{
+			"name": "Executive Producer - Patch Movie",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhZRTZvemNScG50d2VXR1NWYS1FWiJ9.eyJpc3MiOiJodHRwczovL2ZzbmQtdmlrYXNnYXJnLnVrLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2NDZhNzAwODYwM2U5MDg1ZTQ0NGQzNTAiLCJhdWQiOiJjYXBzdG9uZV9maW5hbCIsImlhdCI6MTY4NDc5MDE2MiwiZXhwIjoxNjg0Nzk3MzYyLCJhenAiOiJxaU91MW9jSXVLYUJyblM4RFFaV2gySFdVWjZ2ZkxTVSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9yIiwiZGVsZXRlOm1vdmllIiwicG9zdDphY3RvciIsInBvc3Q6bW92aWUiLCJ1cGRhdGU6YWN0b3IiLCJ1cGRhdGU6bW92aWUiLCJ2aWV3OmFjdG9ycyIsInZpZXc6bW92aWVzIl19.dRQG5n5jWRcFTeHQIX4gmYm8ih5XkMc-DyCsCL5NZzxorPnwmvSvVnggNYLiaMNchpQeuGwQesmo1yIHkTjzgrbGUQTgUwqt-zkfuQnRIJt6Ahvhn6UTfApM3_lVSwHaw9EeZ9gPZ1MQFvNhKatLNkKwRToNJBnQqM1Grka8kxtS3vjhsyG1TFkLfinFjAbSPLSw6O7nZJZnEPZOYIzSsIDkj0dyO88ihohodkglHABPolKBd-XEjNijj5036g3EyrKqIKzRUYZ2PIIt-kVT_zTwF2_GK0JYHlqHi6b4DQALCL40KegrIpCXt2OBDsYdtwxtkLpa6HMo4frIbDpz4Q"
+					}
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Jab tak hain Jaan\",\r\n    \"release_date\": \"2023-12-16T00:00:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:5000/movie/4"
+			},
+			"response": []
+		},
+		{
+			"name": "Executive Producer- Post an Actor",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhZRTZvemNScG50d2VXR1NWYS1FWiJ9.eyJpc3MiOiJodHRwczovL2ZzbmQtdmlrYXNnYXJnLnVrLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2NDZhNzAwODYwM2U5MDg1ZTQ0NGQzNTAiLCJhdWQiOiJjYXBzdG9uZV9maW5hbCIsImlhdCI6MTY4NDc5MDE2MiwiZXhwIjoxNjg0Nzk3MzYyLCJhenAiOiJxaU91MW9jSXVLYUJyblM4RFFaV2gySFdVWjZ2ZkxTVSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9yIiwiZGVsZXRlOm1vdmllIiwicG9zdDphY3RvciIsInBvc3Q6bW92aWUiLCJ1cGRhdGU6YWN0b3IiLCJ1cGRhdGU6bW92aWUiLCJ2aWV3OmFjdG9ycyIsInZpZXc6bW92aWVzIl19.dRQG5n5jWRcFTeHQIX4gmYm8ih5XkMc-DyCsCL5NZzxorPnwmvSvVnggNYLiaMNchpQeuGwQesmo1yIHkTjzgrbGUQTgUwqt-zkfuQnRIJt6Ahvhn6UTfApM3_lVSwHaw9EeZ9gPZ1MQFvNhKatLNkKwRToNJBnQqM1Grka8kxtS3vjhsyG1TFkLfinFjAbSPLSw6O7nZJZnEPZOYIzSsIDkj0dyO88ihohodkglHABPolKBd-XEjNijj5036g3EyrKqIKzRUYZ2PIIt-kVT_zTwF2_GK0JYHlqHi6b4DQALCL40KegrIpCXt2OBDsYdtwxtkLpa6HMo4frIbDpz4Q"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"age\": 94,\r\n    \"gender\": \"M\",\r\n    \"name\": \"Amrish Puri\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:5000/actor"
+			},
+			"response": []
+		},
+		{
+			"name": "Executive Prodicer - Post a Movie",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhZRTZvemNScG50d2VXR1NWYS1FWiJ9.eyJpc3MiOiJodHRwczovL2ZzbmQtdmlrYXNnYXJnLnVrLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2NDZhNzAwODYwM2U5MDg1ZTQ0NGQzNTAiLCJhdWQiOiJjYXBzdG9uZV9maW5hbCIsImlhdCI6MTY4NDc5MDE2MiwiZXhwIjoxNjg0Nzk3MzYyLCJhenAiOiJxaU91MW9jSXVLYUJyblM4RFFaV2gySFdVWjZ2ZkxTVSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9yIiwiZGVsZXRlOm1vdmllIiwicG9zdDphY3RvciIsInBvc3Q6bW92aWUiLCJ1cGRhdGU6YWN0b3IiLCJ1cGRhdGU6bW92aWUiLCJ2aWV3OmFjdG9ycyIsInZpZXc6bW92aWVzIl19.dRQG5n5jWRcFTeHQIX4gmYm8ih5XkMc-DyCsCL5NZzxorPnwmvSvVnggNYLiaMNchpQeuGwQesmo1yIHkTjzgrbGUQTgUwqt-zkfuQnRIJt6Ahvhn6UTfApM3_lVSwHaw9EeZ9gPZ1MQFvNhKatLNkKwRToNJBnQqM1Grka8kxtS3vjhsyG1TFkLfinFjAbSPLSw6O7nZJZnEPZOYIzSsIDkj0dyO88ihohodkglHABPolKBd-XEjNijj5036g3EyrKqIKzRUYZ2PIIt-kVT_zTwF2_GK0JYHlqHi6b4DQALCL40KegrIpCXt2OBDsYdtwxtkLpa6HMo4frIbDpz4Q"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Padosan\",\r\n    \"release_date\": \"1966-01-25T00:00:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:5000/movie"
+			},
+			"response": []
+		},
+		{
+			"name": "Executive Producer - Delete Actor",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhZRTZvemNScG50d2VXR1NWYS1FWiJ9.eyJpc3MiOiJodHRwczovL2ZzbmQtdmlrYXNnYXJnLnVrLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2NDZhNzAwODYwM2U5MDg1ZTQ0NGQzNTAiLCJhdWQiOiJjYXBzdG9uZV9maW5hbCIsImlhdCI6MTY4NDc5MDE2MiwiZXhwIjoxNjg0Nzk3MzYyLCJhenAiOiJxaU91MW9jSXVLYUJyblM4RFFaV2gySFdVWjZ2ZkxTVSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9yIiwiZGVsZXRlOm1vdmllIiwicG9zdDphY3RvciIsInBvc3Q6bW92aWUiLCJ1cGRhdGU6YWN0b3IiLCJ1cGRhdGU6bW92aWUiLCJ2aWV3OmFjdG9ycyIsInZpZXc6bW92aWVzIl19.dRQG5n5jWRcFTeHQIX4gmYm8ih5XkMc-DyCsCL5NZzxorPnwmvSvVnggNYLiaMNchpQeuGwQesmo1yIHkTjzgrbGUQTgUwqt-zkfuQnRIJt6Ahvhn6UTfApM3_lVSwHaw9EeZ9gPZ1MQFvNhKatLNkKwRToNJBnQqM1Grka8kxtS3vjhsyG1TFkLfinFjAbSPLSw6O7nZJZnEPZOYIzSsIDkj0dyO88ihohodkglHABPolKBd-XEjNijj5036g3EyrKqIKzRUYZ2PIIt-kVT_zTwF2_GK0JYHlqHi6b4DQALCL40KegrIpCXt2OBDsYdtwxtkLpa6HMo4frIbDpz4Q"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"kal ho na ho 2\",\r\n    \"release_date\": \"2023-01-01\"\r\n\r\n}"
+				},
+				"url": "http://127.0.0.1:5000/actor/3"
+			},
+			"response": []
+		},
+		{
+			"name": "Executive Producer - Delete a Movie",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjhZRTZvemNScG50d2VXR1NWYS1FWiJ9.eyJpc3MiOiJodHRwczovL2ZzbmQtdmlrYXNnYXJnLnVrLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2NDZhNzAwODYwM2U5MDg1ZTQ0NGQzNTAiLCJhdWQiOiJjYXBzdG9uZV9maW5hbCIsImlhdCI6MTY4NDc5MDE2MiwiZXhwIjoxNjg0Nzk3MzYyLCJhenAiOiJxaU91MW9jSXVLYUJyblM4RFFaV2gySFdVWjZ2ZkxTVSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9yIiwiZGVsZXRlOm1vdmllIiwicG9zdDphY3RvciIsInBvc3Q6bW92aWUiLCJ1cGRhdGU6YWN0b3IiLCJ1cGRhdGU6bW92aWUiLCJ2aWV3OmFjdG9ycyIsInZpZXc6bW92aWVzIl19.dRQG5n5jWRcFTeHQIX4gmYm8ih5XkMc-DyCsCL5NZzxorPnwmvSvVnggNYLiaMNchpQeuGwQesmo1yIHkTjzgrbGUQTgUwqt-zkfuQnRIJt6Ahvhn6UTfApM3_lVSwHaw9EeZ9gPZ1MQFvNhKatLNkKwRToNJBnQqM1Grka8kxtS3vjhsyG1TFkLfinFjAbSPLSw6O7nZJZnEPZOYIzSsIDkj0dyO88ihohodkglHABPolKBd-XEjNijj5036g3EyrKqIKzRUYZ2PIIt-kVT_zTwF2_GK0JYHlqHi6b4DQALCL40KegrIpCXt2OBDsYdtwxtkLpa6HMo4frIbDpz4Q"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"kal ho na ho 2\",\r\n    \"release_date\": \"2023-01-01\"\r\n\r\n}"
+				},
+				"url": "http://127.0.0.1:5000/movie/2"
+			},
+			"response": []
+		}
+	]
+}
