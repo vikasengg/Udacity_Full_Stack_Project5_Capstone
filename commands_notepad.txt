@@ -1,0 +1,24 @@
+# Starting a PostgreSQL Server
+pg_Ctl -D "C:\Program Files\PostgreSQL\15\data" start
+
+# Stopping a PostgreSQL Server
+pg_Ctl -D "C:\Program Files\PostgreSQL\15\data" stop
+
+# Creating a Virtual Environment
+python -m venv venv
+
+# Activating the Environment
+./venv/Scripts/activate
+
+# Install Requirements Files
+pip install -r requirements.txt
+
+# Loging on to PSQL Server using the User postgres
+psql -U postgres
+
+
+export FLASK_APP=flaskr
+export FLASK_DEBUG=True
+export FLASK_ENVIRONMENT=debug
+
+flask run --reload
