@@ -4,13 +4,25 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from database.models import setup_db,  Movie, Actor, setup_migrations
 from auth.auth import AuthError, requires_auth
+from settings import DB_NAME, DB_USER, DB_PASSWORD, DB_HOST
 
 from datetime import datetime
 
 def create_app():
 
     app = Flask(__name__)
-    setup_db(app)
+    # Get Database URL from the environment variable
+    DATABASE_URI = os.environ.get("DATABASE_URL")
+
+    # Setting up Database URI in correct format
+    if DATABASE_URI is None:
+        DATABASE_URI = "postgresql://{}:{}@{}/{}".format(DB_USER, DB_PASSWORD, DB_HOST, DB_NAME)
+        print("Local configured Database URI is ", DATABASE_URI)
+    else:
+        # DATABASE_URI = DATABASE_URI.replace("://", "ql://", 1)
+        print("Prod configured Database URI is ", DATABASE_URI)
+
+    setup_db(app, DATABASE_URI)
     setup_migrations(app)
     CORS(app)
 
