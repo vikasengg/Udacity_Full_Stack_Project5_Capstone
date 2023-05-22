@@ -10,18 +10,6 @@ import json
 
 db = SQLAlchemy()
 
-# Get Database URL from the environment variable
-DATABASE_URI = os.environ.get("DATABASE_URL")
-print("From ENV Variable - Database URI =", DATABASE_URI)
-
-# Setting up Database URI in correct format
-if DATABASE_URI is None:
-    DATABASE_URI = "postgresql://{}:{}@{}/{}".format(DB_USER, DB_PASSWORD, DB_HOST, DB_NAME)
-    print("Database URI is ", DATABASE_URI)
-else:
-    DATABASE_URI = DATABASE_URI.replace("://", "ql://", 1)
-    print("Database URI is ", DATABASE_URI)
-
 # Setting up DB config using path
 def setup_db(app,database_path=DATABASE_URI):
     app.config["SQLALCHEMY_DATABASE_URI"] = database_path
